@@ -277,6 +277,9 @@ if submitted:
     elif outcome == "Hold":
         path = ["Received", "Visual_Check", "Hold", "Supervisor_Review"]
         final_status = "HOLD"
+    elif outcome == "Reinspect":
+        path = bfs_plan("Received", "Reinspection")
+        final_status = "REINSPECT"
     else:
         path = bfs_plan("Received", "Supervisor_Review")
         final_status = "REINSPECT"
